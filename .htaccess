@@ -1,0 +1,21 @@
+# ==============================================================================
+# LAD GLOBAL TRAVELS AND TOURS — ROOT SECURITY & ROUTING (.htaccess)
+# Protects private directories and forwards web traffic to public/
+# ==============================================================================
+
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # 1. Strictly block direct access to private directories & sensitive files
+    RewriteRule ^(app|bin|database|storage|tests|\.env|\.git) - [F,L,NC]
+    RewriteRule "\.(env|sql|log|md|json|lock)$" - [F,L,NC]
+
+    # 2. Forward all browser traffic to the public webroot
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^$ public/ [L]
+
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

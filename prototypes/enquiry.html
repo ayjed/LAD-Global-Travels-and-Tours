@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Make an Enquiry or Request a Quote — LAD Global Travels</title>
+  <meta name="description" content="Contact our travel specialists in Lagos. Submit your enquiry for visas, tour packages, flight booking assistance, or study abroad advisory.">
+  <link rel="stylesheet" href="css/prototype.css">
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="home.html" class="brand-logo" aria-label="LAD Global Travels Home">
+        <span class="brand-mark">LAD</span>
+        <div>
+          <span class="brand-name">LAD Global Travels</span>
+          <span class="brand-tagline">Explore • Discover • Experience</span>
+        </div>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="home.html" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="package-detail.html" class="nav-link">Tour Packages</a></li>
+          <li><a href="home.html#faqSection" class="nav-link">FAQs</a></li>
+          <li><a href="enquiry.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta-group">
+        <a href="enquiry.html" class="btn btn-accent btn-sm">Plan Your Trip</a>
+        <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top: var(--space-8);">
+      <div class="container container-narrow">
+        
+        <!-- Header -->
+        <div style="margin-bottom: var(--space-8);">
+          <span class="badge badge-gold" style="margin-bottom: var(--space-2);">Start Your Journey</span>
+          <h1 style="font-size: 2.25rem; margin-bottom: var(--space-2);">Travel Enquiry & Consultation Request</h1>
+          <p class="text-muted" style="line-height: 1.6;">
+            Fill out the details below and an experienced travel consultant will review your request and get back to you within 24 hours via phone or WhatsApp. No customer account required.
+          </p>
+        </div>
+
+        <!-- Success Alert (Hidden by default, triggered on demo submit) -->
+        <div id="formSuccessAlert" style="display: none; background-color: var(--color-success-bg); border: 1px solid var(--color-success); color: var(--color-success); padding: var(--space-4); border-radius: var(--radius-md); margin-bottom: var(--space-6);" role="alert">
+          <h4 style="color: var(--color-success); margin-bottom: 4px;">✓ Enquiry Received Successfully!</h4>
+          <p style="font-size: var(--font-size-sm); margin-bottom: 0;">
+            Your reference code is <strong>ENQ-2026-8942</strong>. A travel consultant will contact you via WhatsApp at the phone number provided. You can also chat directly using our floating WhatsApp button.
+          </p>
+        </div>
+
+        <!-- Accessible Enquiry Form -->
+        <div class="card" style="padding: var(--space-8);">
+          <form id="enquiryFormDemo" novalidate>
+
+            <!-- Anti-Spam Honeypot Field (Hidden from real users) -->
+            <div style="position: absolute; left: -9999px; top: -9999px;" aria-hidden="true">
+              <label for="honeypot_field">Leave this field blank</label>
+              <input type="text" id="honeypot_field" name="website_url_check" tabindex="-1" autocomplete="off">
+            </div>
+
+            <!-- Full Name -->
+            <div class="form-group">
+              <label for="fullName" class="form-label form-label-required">Full Name</label>
+              <input type="text" id="fullName" class="form-control" placeholder="e.g. Babatunde Adeleke" required aria-describedby="fullName-hint fullName-error">
+              <span id="fullName-hint" class="form-hint">Enter your official name as shown on your passport or identity document.</span>
+              <span id="fullName-error" class="form-error-msg" style="display: none;" role="alert">Please enter your full name.</span>
+            </div>
+
+            <!-- Email & Phone Grid -->
+            <div class="grid-2">
+              <div class="form-group">
+                <label for="emailAddress" class="form-label form-label-required">Email Address</label>
+                <input type="email" id="emailAddress" class="form-control" placeholder="adeleke@example.com" required aria-describedby="emailAddress-error">
+                <span id="emailAddress-error" class="form-error-msg" style="display: none;" role="alert">Please provide a valid email address.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="phoneNumber" class="form-label form-label-required">Phone / WhatsApp Number</label>
+                <input type="tel" id="phoneNumber" class="form-control" placeholder="07017597650 or +234..." required aria-describedby="phoneNumber-hint phoneNumber-error">
+                <span id="phoneNumber-hint" class="form-hint">We primarily reach out via WhatsApp for fast responses.</span>
+                <span id="phoneNumber-error" class="form-error-msg" style="display: none;" role="alert">Please enter a valid phone number.</span>
+              </div>
+            </div>
+
+            <!-- Service Selection -->
+            <div class="form-group">
+              <label for="serviceType" class="form-label form-label-required">Service of Interest</label>
+              <select id="serviceType" class="form-control" required aria-describedby="serviceType-error">
+                <option value="" disabled selected>— Select a Service —</option>
+                <option value="visa">Visa Assistance & Application Guidance</option>
+                <option value="tours">Holiday Tour Packages</option>
+                <option value="flights">Flight Booking Assistance (Enquiry-Only)</option>
+                <option value="hotels">Hotel Reservation Assistance (Enquiry-Only)</option>
+                <option value="study">Study Abroad & Student Visa</option>
+                <option value="pr">Canada Permanent Residency (PR)</option>
+                <option value="cbi">Citizenship by Investment (CBI)</option>
+                <option value="rbi">Residency by Investment (RBI)</option>
+                <option value="general">General Travel Consultation</option>
+              </select>
+              <span id="serviceType-error" class="form-error-msg" style="display: none;" role="alert">Please select the service you are interested in.</span>
+            </div>
+
+            <!-- Destination & Dates Grid -->
+            <div class="grid-2">
+              <div class="form-group">
+                <label for="destination" class="form-label">Destination Country or City (Optional)</label>
+                <input type="text" id="destination" class="form-control" placeholder="e.g. Kenya, Dubai, United Kingdom, Canada">
+              </div>
+
+              <div class="form-group">
+                <label for="travellerNum" class="form-label">Estimated Number of Travellers</label>
+                <input type="number" id="travellerNum" class="form-control" placeholder="1" min="1" max="50">
+              </div>
+            </div>
+
+            <!-- Message / Requirements -->
+            <div class="form-group">
+              <label for="messageText" class="form-label form-label-required">How Can We Help You?</label>
+              <textarea id="messageText" class="form-control" rows="4" placeholder="Describe your intended travel dates, budget, specific questions, or special requests..." required aria-describedby="messageText-error"></textarea>
+              <span id="messageText-error" class="form-error-msg" style="display: none;" role="alert">Please provide details regarding your enquiry.</span>
+            </div>
+
+            <!-- Privacy Notice & Consent -->
+            <div class="form-group">
+              <label class="form-checkbox-label">
+                <input type="checkbox" id="consentCheck" required>
+                <span>
+                  I agree that LAD Global Travels and Tours may contact me via WhatsApp, phone, or email regarding this enquiry. We respect your privacy and will never share your personal information.
+                </span>
+              </label>
+              <span id="consentCheck-error" class="form-error-msg" style="display: none;" role="alert">You must agree before submitting.</span>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top: var(--space-4);">
+              Send Travel Enquiry →
+            </button>
+          </form>
+        </div>
+
+        <!-- Direct Office Info Card -->
+        <div class="card" style="margin-top: var(--space-8); padding: var(--space-6); background-color: var(--color-surface-subtle);">
+          <h3 style="margin-bottom: var(--space-2); font-size: 1.15rem;">Prefer Immediate Assistance?</h3>
+          <p class="text-muted" style="font-size: var(--font-size-sm); margin-bottom: var(--space-4);">
+            You can reach our lead travel consultants directly during business hours (Monday – Friday, 9:00 AM – 5:00 PM).
+          </p>
+          <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+            <a href="https://wa.me/2347017597650" target="_blank" rel="noopener" class="btn btn-accent btn-sm">Chat on WhatsApp (07017597650)</a>
+            <a href="tel:07017597650" class="btn btn-outline btn-sm">Call Office (07017597650)</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 LAD Global Travels and Tours. All Rights Reserved.</div>
+      <div>Office: SF41, Ikorodu Complex, Ita Elewa, Ikorodu, Lagos</div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/2347017597650" class="whatsapp-floating" target="_blank" rel="noopener">
+    <span>💬</span>
+    <span>Chat on WhatsApp</span>
+  </a>
+
+  <script src="js/prototype.js"></script>
+</body>
+</html>

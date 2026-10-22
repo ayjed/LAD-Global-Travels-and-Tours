@@ -1,0 +1,22 @@
+# ==============================================================================
+# LAD GLOBAL TRAVELS AND TOURS — ROBOTS.TXT
+# ==============================================================================
+
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /services
+Allow: /packages
+Allow: /faq
+Allow: /contact
+Allow: /privacy
+Allow: /terms
+Allow: /refund-policy
+
+# Disallow Private Administrative, Callback and Sensitive Booking Paths
+Disallow: /admin/
+Disallow: /booking/
+Disallow: /paystack/
+
+# XML Sitemap Location
+Sitemap: /sitemap.xml

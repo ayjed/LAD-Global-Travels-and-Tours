@@ -1,0 +1,27 @@
+# Environment and secret configuration
+.env
+.env.local
+.env.production
+
+# Storage and logs
+storage/logs/*.log
+storage/temp/*
+!storage/temp/.gitkeep
+!storage/logs/.gitkeep
+
+# Uploads (ignore uploaded content, preserve directory)
+public/uploads/*
+!public/uploads/.gitkeep
+!public/uploads/.htaccess
+
+# IDE and OS files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+Desktop.ini

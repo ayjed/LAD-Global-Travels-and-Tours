@@ -1,0 +1,18 @@
+# ==============================================================================
+# LAD GLOBAL TRAVELS AND TOURS — UPLOADS DIRECTORY SECURITY
+# Block execution of any server-side script or executable in uploads
+# ==============================================================================
+
+# Disable directory listing and script execution
+Options -Indexes -ExecCGI
+
+# Deny access to all script extensions
+<FilesMatch "(?i)\.(php|phtml|php3|php4|php5|php7|php8|phps|pl|py|cgi|sh|bash|exe|bat)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>

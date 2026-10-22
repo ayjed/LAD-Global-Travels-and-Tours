@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nairobi & Maasai Mara Safari Experience — LAD Global Travels</title>
+  <meta name="description" content="6 Days, 5 Nights luxury safari across Nairobi and Maasai Mara National Reserve. Transparent pricing, vetted guides, and secure Paystack or bank transfer payments.">
+  <link rel="stylesheet" href="css/prototype.css">
+  <style>
+    .itinerary-step { position: relative; padding-left: var(--space-8); margin-bottom: var(--space-6); border-left: 2px solid var(--color-border); }
+    .itinerary-step::before { content: ""; position: absolute; left: -7px; top: 0; width: 12px; height: 12px; border-radius: 50%; background-color: var(--color-primary-light); border: 2px solid var(--color-surface); }
+    .booking-card { background: var(--color-surface); border: 2px solid var(--color-primary-light); border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--shadow-lg); position: sticky; top: 96px; }
+    .payment-option-label { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); cursor: pointer; margin-bottom: var(--space-2); }
+    .payment-option-label:hover { border-color: var(--color-primary-light); background-color: var(--color-surface-subtle); }
+  </style>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="home.html" class="brand-logo" aria-label="LAD Global Travels Home">
+        <span class="brand-mark">LAD</span>
+        <div>
+          <span class="brand-name">LAD Global Travels</span>
+          <span class="brand-tagline">Explore • Discover • Experience</span>
+        </div>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="home.html" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="package-detail.html" class="nav-link active">Tour Packages</a></li>
+          <li><a href="home.html#faqSection" class="nav-link">FAQs</a></li>
+          <li><a href="enquiry.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta-group">
+        <a href="enquiry.html" class="btn btn-accent btn-sm">Plan Your Trip</a>
+        <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Breadcrumb & Title Section -->
+    <section style="background-color: var(--color-surface); border-bottom: 1px solid var(--color-border); padding: var(--space-4) 0;">
+      <div class="container">
+        <div style="font-size: var(--font-size-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">
+          <a href="home.html">Home</a> / <a href="home.html">Tour Packages</a> / <span>Nairobi & Maasai Mara Explorer</span>
+        </div>
+        <div class="flex-between" style="flex-wrap: wrap; gap: var(--space-4);">
+          <div>
+            <div style="display: flex; gap: var(--space-2); align-items: center; margin-bottom: var(--space-1);">
+              <span class="badge badge-gold">Kenya Tour</span>
+              <span class="badge badge-bookable">Instant Booking Enabled</span>
+            </div>
+            <h1>Nairobi & Maasai Mara Wildlife Safari</h1>
+            <p class="text-muted">6 Days / 5 Nights • Departs Nairobi • English & Swahili Guides</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content & Booking Split Layout -->
+    <section class="section">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
+          <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
+            
+            <!-- Gallery / Media Hero Placeholder -->
+            <div style="height: 380px; border-radius: var(--radius-lg); background: linear-gradient(135deg, #092A60 0%, #135EB0 50%, #E6AE34 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #FFFFFF; text-align: center; padding: var(--space-6);">
+              <span style="font-size: 4rem; margin-bottom: var(--space-2);">🦁 🐘 🦒</span>
+              <h2>Maasai Mara Game Reserve & Nairobi Highlights</h2>
+              <p style="color: #F1F4F9; max-width: 500px;">Experience the jewel of African wildlife with luxury tented camps and professional safari 4x4 land cruisers.</p>
+            </div>
+
+            <!-- Two Columns for Desktop: Left Content, Right Sticky Booking -->
+            <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
+              
+              <div style="display: flex; flex-direction: column; gap: var(--space-8);">
+                <!-- Overview -->
+                <div class="card" style="padding: var(--space-6);">
+                  <h3 style="margin-bottom: var(--space-3);">Tour Overview</h3>
+                  <p class="text-muted" style="line-height: 1.7; margin-bottom: var(--space-4);">
+                    Embark on an unforgettable African expedition combining the vibrant cosmopolitan energy of Nairobi with the untamed wonder of the Maasai Mara. Witness the Big Five (lion, leopard, elephant, buffalo, and rhino) across vast golden savannahs, stay in eco-certified luxury tented lodges, and enjoy authentic cultural encounters with the Maasai community.
+                  </p>
+                  <div class="grid-3" style="background: var(--color-surface-subtle); padding: var(--space-4); border-radius: var(--radius-md);">
+                    <div>
+                      <span class="price-label">Travel Period</span>
+                      <strong>Open Year-Round</strong>
+                    </div>
+                    <div>
+                      <span class="price-label">Group Size</span>
+                      <strong>Max 8 per 4x4 Cruiser</strong>
+                    </div>
+                    <div>
+                      <span class="price-label">Meals</span>
+                      <strong>Full Board on Safari</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Day-by-Day Itinerary -->
+                <div class="card" style="padding: var(--space-6);">
+                  <h3 style="margin-bottom: var(--space-6);">Day-by-Day Itinerary</h3>
+
+                  <div class="itinerary-step">
+                    <h4>Day 1: Arrival in Nairobi & Giraffe Centre</h4>
+                    <p class="text-muted" style="font-size: var(--font-size-sm); margin-top: 4px;">
+                      Airport pickup from Jomo Kenyatta International Airport (NBO). Transfer to luxury city hotel, visit the Giraffe Centre and enjoy a welcome dinner.
+                    </p>
+                  </div>
+
+                  <div class="itinerary-step">
+                    <h4>Day 2: Scenic Drive via Great Rift Valley to Maasai Mara</h4>
+                    <p class="text-muted" style="font-size: var(--font-size-sm); margin-top: 4px;">
+                      Depart Nairobi descending through the Great Rift Valley viewpoint. Arrive at Mara luxury tented camp for lunch followed by an introductory late afternoon game drive.
+                    </p>
+                  </div>
+
+                  <div class="itinerary-step">
+                    <h4>Day 3: Full-Day Maasai Mara Game Tracking</h4>
+                    <p class="text-muted" style="font-size: var(--font-size-sm); margin-top: 4px;">
+                      Full-day safari expedition with picnic lunch along the Mara River. Track pride of lions, cheetahs, zebras, and seasonal wildebeest herds.
+                    </p>
+                  </div>
+
+                  <div class="itinerary-step">
+                    <h4>Day 4: Sunrise Safari & Maasai Cultural Experience</h4>
+                    <p class="text-muted" style="font-size: var(--font-size-sm); margin-top: 4px;">
+                      Early morning sunrise game drive when predators are most active. Afternoon guided cultural visit to a traditional Maasai Manyatta village.
+                    </p>
+                  </div>
+
+                  <div class="itinerary-step">
+                    <h4>Day 5: Lake Naivasha Boat Cruise</h4>
+                    <p class="text-muted" style="font-size: var(--font-size-sm); margin-top: 4px;">
+                      Depart Mara for scenic Lake Naivasha. Enjoy a guided boat safari spotting hippos and fish eagles, followed by a walking safari on Crescent Island.
+                    </p>
+                  </div>
+
+                  <div class="itinerary-step" style="border-left-color: transparent;">
+                    <h4>Day 6: Nairobi Souvenirs & Departure</h4>
+                    <p class="text-muted" style="font-size: var(--font-size-sm); margin-top: 4px;">
+                      Return to Nairobi for local artisan market shopping at Maasai Market, followed by airport transfer for your evening flight home.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Inclusions & Exclusions -->
+                <div class="grid-2">
+                  <div class="card" style="padding: var(--space-6);">
+                    <h3 style="color: var(--color-success); margin-bottom: var(--space-3);">✓ What's Included</h3>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--font-size-sm); color: var(--color-text-muted);">
+                      <li>✓ 5 Nights accommodation (City hotel + luxury safari lodge)</li>
+                      <li>✓ Daily full-board meals during safari</li>
+                      <li>✓ Dedicated 4x4 Land Cruiser with pop-up roof</li>
+                      <li>✓ All Maasai Mara National Reserve conservation fees</li>
+                      <li>✓ Certified English/Swahili speaking driver-guide</li>
+                      <li>✓ Complimentary bottled water on game drives</li>
+                      <li>✓ Round-trip airport transfers in Nairobi</li>
+                    </ul>
+                  </div>
+
+                  <div class="card" style="padding: var(--space-6);">
+                    <h3 style="color: var(--color-danger); margin-bottom: var(--space-3);">✗ What's Excluded</h3>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--font-size-sm); color: var(--color-text-muted);">
+                      <li>✗ International airfare to/from Nairobi (can be requested separately)</li>
+                      <li>✗ Kenya Electronic Travel Authorisation (eTA) fee</li>
+                      <li>✗ Personal travel and medical insurance</li>
+                      <li>✗ Gratuities/tips for safari driver-guide and hotel staff</li>
+                      <li>✗ Alcoholic beverages and personal expenses</li>
+                      <li>✗ Optional hot air balloon safari experience</li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Sticky Booking & Payment Sidebar (Right Column) -->
+              <div>
+                <div class="booking-card">
+                  <span class="badge badge-gold" style="margin-bottom: var(--space-2);">Official Tour Pricing</span>
+                  <div id="packageUnitPrice" data-price="1450000" style="margin-bottom: var(--space-4);">
+                    <span style="font-size: var(--font-size-xs); color: var(--color-text-muted); display: block;">Price per person</span>
+                    <span style="font-size: 2rem; font-weight: 800; color: var(--color-primary);">₦1,450,000</span>
+                    <span style="font-size: var(--font-size-xs); color: var(--color-success); font-weight: 600;">• All Taxes & Reserve Fees Included</span>
+                  </div>
+
+                  <form id="packageBookingForm">
+                    <div class="form-group">
+                      <label for="travellerCount" class="form-label form-label-required">Number of Travellers</label>
+                      <input type="number" id="travellerCount" name="travellers" class="form-control" value="1" min="1" max="10" required>
+                      <span class="form-hint">Final price is calculated strictly on the server: ₦1,450,000 × count.</span>
+                    </div>
+
+                    <div style="background-color: var(--color-surface-subtle); padding: var(--space-3); border-radius: var(--radius-md); margin-bottom: var(--space-4); display: flex; justify-content: space-between; align-items: center;">
+                      <span style="font-weight: 600; font-size: var(--font-size-sm);">Total Amount:</span>
+                      <span id="totalPriceDisplay" style="font-size: 1.35rem; font-weight: 800; color: var(--color-primary);">₦1,450,000</span>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="leadName" class="form-label form-label-required">Lead Traveller Full Name</label>
+                      <input type="text" id="leadName" class="form-control" placeholder="e.g. Adebayo Johnson" required>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="leadEmail" class="form-label form-label-required">Email Address</label>
+                      <input type="email" id="leadEmail" class="form-control" placeholder="johnson@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="leadPhone" class="form-label form-label-required">Phone / WhatsApp Number</label>
+                      <input type="tel" id="leadPhone" class="form-control" placeholder="08012345678" required>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label form-label-required">Select Payment Option</label>
+                      
+                      <label class="payment-option-label">
+                        <input type="radio" name="payment_method" value="paystack" checked>
+                        <div>
+                          <strong>Pay with Paystack (Online)</strong>
+                          <span style="font-size: var(--font-size-xs); color: var(--color-text-muted); display: block;">Instant checkout via Debit Card, Bank Transfer, or USSD</span>
+                        </div>
+                      </label>
+
+                      <label class="payment-option-label">
+                        <input type="radio" name="payment_method" value="manual">
+                        <div>
+                          <strong>Manual Direct Bank Transfer</strong>
+                          <span style="font-size: var(--font-size-xs); color: var(--color-text-muted); display: block;">Pay to LAD Global corporate account; verified by admin</span>
+                        </div>
+                      </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-accent btn-lg btn-block" style="margin-bottom: var(--space-3);">
+                      Proceed to Secure Booking →
+                    </button>
+
+                    <p style="font-size: var(--font-size-xs); color: var(--color-text-light); text-align: center;">
+                      🔒 Payments are securely processed. Travel confirmation is issued once availability is reconfirmed.
+                    </p>
+                  </form>
+
+                  <div style="margin-top: var(--space-6); padding-top: var(--space-4); border-top: 1px solid var(--color-border); text-align: center;">
+                    <span style="font-size: var(--font-size-xs); color: var(--color-text-muted); display: block; margin-bottom: var(--space-2);">Need custom dates or private group booking?</span>
+                    <a href="enquiry.html?package=kenya-safari" class="btn btn-outline btn-sm btn-block">Request Custom Quote Instead</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 LAD Global Travels and Tours. All Rights Reserved.</div>
+      <div>Official Office: SF41, Ikorodu Complex, Ita Elewa, Ikorodu, Lagos</div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/2347017597650" class="whatsapp-floating" target="_blank" rel="noopener">
+    <span>💬</span>
+    <span>Chat on WhatsApp</span>
+  </a>
+
+  <script src="js/prototype.js"></script>
+</body>
+</html>

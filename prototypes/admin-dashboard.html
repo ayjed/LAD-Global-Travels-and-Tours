@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Console — LAD Global Travels and Tours</title>
+  <link rel="stylesheet" href="css/prototype.css">
+  <style>
+    body { background-color: #F1F5F9; }
+    .status-select { padding: 4px 8px; border-radius: var(--radius-sm); border: 1px solid var(--color-border); font-size: var(--font-size-xs); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <div class="admin-shell">
+    <!-- Minimal Admin Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="brand-logo" style="margin-bottom: var(--space-4);">
+        <span class="brand-mark" style="padding: 4px 10px; font-size: 1rem;">LAD</span>
+        <div>
+          <span class="brand-name" style="color: #FFFFFF; font-size: 1rem;">LAD Global</span>
+          <span class="brand-tagline" style="color: #94A3B8;">Admin Management</span>
+        </div>
+      </div>
+
+      <nav aria-label="Admin Navigation">
+        <ul class="admin-nav">
+          <li class="admin-nav-item"><a href="admin-dashboard.html" class="active">📊 Dashboard Overview</a></li>
+          <li class="admin-nav-item"><a href="#">📦 Tour Packages (3)</a></li>
+          <li class="admin-nav-item"><a href="#">💬 Enquiries & Leads (18)</a></li>
+          <li class="admin-nav-item"><a href="#">💳 Payments & Audit (5)</a></li>
+          <li class="admin-nav-item"><a href="#">⚙️ Business Settings</a></li>
+          <li class="admin-nav-item" style="margin-top: auto;"><a href="home.html" style="color: var(--color-accent);">← Exit to Public Site</a></li>
+          <li class="admin-nav-item"><a href="#" style="color: #F87171;">🔒 Logout</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Admin Workspace -->
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div>
+          <h1 style="font-size: 1.5rem; margin-bottom: 2px;">Management Dashboard</h1>
+          <p class="text-muted" style="font-size: var(--font-size-sm); margin-bottom: 0;">LAD Global Travels & Tours • Single Administrator Console</p>
+        </div>
+        <div style="display: flex; gap: var(--space-3); align-items: center;">
+          <span style="font-size: var(--font-size-xs); background: #E2E8F0; padding: 4px 8px; border-radius: var(--radius-sm); font-weight: 600;">Logged in: admin@ladglobal</span>
+          <button class="btn btn-primary btn-sm">+ Create Tour Package</button>
+        </div>
+      </header>
+
+      <!-- Key KPI Tiles -->
+      <section style="margin-bottom: var(--space-8);">
+        <div class="grid-4">
+          <div class="metric-card">
+            <span class="price-label">New Enquiries (Today)</span>
+            <div class="metric-val" style="color: var(--color-primary-light);">4</div>
+            <span style="font-size: var(--font-size-xs); color: var(--color-success); font-weight: 600;">18 total open leads</span>
+          </div>
+
+          <div class="metric-card" style="border-left: 4px solid var(--color-warning);">
+            <span class="price-label">Pending Bank Transfers</span>
+            <div class="metric-val" style="color: var(--color-warning);">2</div>
+            <span style="font-size: var(--font-size-xs); color: var(--color-warning); font-weight: 600;">Requires external statement check</span>
+          </div>
+
+          <div class="metric-card">
+            <span class="price-label">Active Tour Packages</span>
+            <div class="metric-val" style="color: var(--color-primary);">3</div>
+            <span style="font-size: var(--font-size-xs); color: var(--color-text-muted);">2 online payable, 1 quote-only</span>
+          </div>
+
+          <div class="metric-card">
+            <span class="price-label">Paystack Verified (This Month)</span>
+            <div class="metric-val" style="color: var(--color-success);">₦4,350,000</div>
+            <span style="font-size: var(--font-size-xs); color: var(--color-success); font-weight: 600;">3 verified transactions</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Pending Manual Bank Transfers (Critical Audit Gate) -->
+      <section style="margin-bottom: var(--space-8);">
+        <div class="flex-between" style="margin-bottom: var(--space-4);">
+          <div>
+            <h2 style="font-size: 1.25rem;">Pending Manual Bank Transfers (Reconciliation Queue)</h2>
+            <p class="text-muted" style="font-size: var(--font-size-xs); margin-bottom: 0;">
+              ⚠️ Never mark paid based on customer screenshots. Check the company bank account statement before approving.
+            </p>
+          </div>
+          <span class="badge badge-warning">2 Awaiting Review</span>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Booking Ref</th>
+                <th>Customer</th>
+                <th>Tour Package</th>
+                <th>Expected Amount</th>
+                <th>Payment Mode</th>
+                <th>Status</th>
+                <th>Initiated At</th>
+                <th>Admin Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>BKG-2026-0194</strong></td>
+                <td>Oluwaseun Bakare<br><span style="font-size: var(--font-size-xs); color: var(--color-text-muted);">08031112233</span></td>
+                <td>Nairobi & Maasai Mara Safari (1)</td>
+                <td><strong>₦1,450,000</strong></td>
+                <td><span class="badge badge-warning">Bank Transfer</span></td>
+                <td><span class="badge badge-warning">Pending Verification</span></td>
+                <td style="font-size: var(--font-size-xs);">2026-10-20 08:34</td>
+                <td>
+                  <button class="btn btn-primary btn-sm" style="background-color: var(--color-success); margin-right: 4px;">✓ Confirm Bank Receipt</button>
+                  <button class="btn btn-outline btn-sm" style="color: var(--color-danger); border-color: var(--color-danger);">Reject</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>BKG-2026-0188</strong></td>
+                <td>Dr. Chinedu Eze<br><span style="font-size: var(--font-size-xs); color: var(--color-text-muted);">08029994455</span></td>
+                <td>Dubai Luxury City & Safari (2)</td>
+                <td><strong>₦2,360,000</strong></td>
+                <td><span class="badge badge-warning">Bank Transfer</span></td>
+                <td><span class="badge badge-warning">Pending Verification</span></td>
+                <td style="font-size: var(--font-size-xs);">2026-10-19 16:12</td>
+                <td>
+                  <button class="btn btn-primary btn-sm" style="background-color: var(--color-success); margin-right: 4px;">✓ Confirm Bank Receipt</button>
+                  <button class="btn btn-outline btn-sm" style="color: var(--color-danger); border-color: var(--color-danger);">Reject</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section: Recent Customer Enquiries & Lead Statuses -->
+      <section>
+        <div class="flex-between" style="margin-bottom: var(--space-4);">
+          <div>
+            <h2 style="font-size: 1.25rem;">Recent Customer Enquiries</h2>
+            <p class="text-muted" style="font-size: var(--font-size-xs); margin-bottom: 0;">Click on any lead to add internal consultation notes and update status.</p>
+          </div>
+          <button class="btn btn-outline btn-sm">Export Enquiries (CSV)</button>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Lead Ref</th>
+                <th>Client Name</th>
+                <th>Service Type</th>
+                <th>Contact Coordinates</th>
+                <th>Destination</th>
+                <th>Status</th>
+                <th>Received</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>ENQ-8942</strong></td>
+                <td>Babatunde Adeleke</td>
+                <td><span class="badge badge-info">Visa Assistance</span></td>
+                <td>07017597650 • <a href="https://wa.me/2347017597650" target="_blank" rel="noopener">WhatsApp</a></td>
+                <td>United Kingdom</td>
+                <td>
+                  <select class="status-select" style="background-color: #EBF8FF; color: #2B6CB0;">
+                    <option selected>New</option>
+                    <option>Contacted</option>
+                    <option>Quoted</option>
+                    <option>Closed</option>
+                  </select>
+                </td>
+                <td style="font-size: var(--font-size-xs);">Today 09:15</td>
+                <td><button class="btn btn-outline btn-sm">Notes (0)</button></td>
+              </tr>
+              <tr>
+                <td><strong>ENQ-8941</strong></td>
+                <td>Mrs. Funke Williams</td>
+                <td><span class="badge badge-enquiry">Flight Assistance</span></td>
+                <td>08054443322 • <a href="https://wa.me/2347017597650" target="_blank" rel="noopener">WhatsApp</a></td>
+                <td>Lagos → London Heathrow</td>
+                <td>
+                  <select class="status-select" style="background-color: #FEF3D6; color: #B25E02;">
+                    <option>New</option>
+                    <option selected>Contacted</option>
+                    <option>Quoted</option>
+                    <option>Closed</option>
+                  </select>
+                </td>
+                <td style="font-size: var(--font-size-xs);">Today 08:40</td>
+                <td><button class="btn btn-outline btn-sm">Notes (1)</button></td>
+              </tr>
+              <tr>
+                <td><strong>ENQ-8939</strong></td>
+                <td>Emeka Okonkwo</td>
+                <td><span class="badge badge-bookable">Tour Package</span></td>
+                <td>08123334455 • <a href="https://wa.me/2347017597650" target="_blank" rel="noopener">WhatsApp</a></td>
+                <td>Rwanda Gorilla Trek</td>
+                <td>
+                  <select class="status-select" style="background-color: #FEF3D6; color: #B25E02;">
+                    <option>New</option>
+                    <option>Contacted</option>
+                    <option selected>Quoted</option>
+                    <option>Closed</option>
+                  </select>
+                </td>
+                <td style="font-size: var(--font-size-xs);">Yesterday</td>
+                <td><button class="btn btn-outline btn-sm">Notes (2)</button></td>
+              </tr>
+              <tr>
+                <td><strong>ENQ-8935</strong></td>
+                <td>Halima Bello</td>
+                <td><span class="badge badge-info">Study Abroad</span></td>
+                <td>08098887766 • <a href="https://wa.me/2347017597650" target="_blank" rel="noopener">WhatsApp</a></td>
+                <td>Canada (MSc Nursing)</td>
+                <td>
+                  <select class="status-select" style="background-color: #E6F4EA; color: #0E7C3A;">
+                    <option>New</option>
+                    <option>Contacted</option>
+                    <option>Quoted</option>
+                    <option selected>Closed</option>
+                  </select>
+                </td>
+                <td style="font-size: var(--font-size-xs);">2 days ago</td>
+                <td><button class="btn btn-outline btn-sm">Notes (4)</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/prototype.js"></script>
+</body>
+</html>

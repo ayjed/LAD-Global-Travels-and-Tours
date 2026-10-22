@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Travel & Global Mobility Services — LAD Global Travels</title>
+  <meta name="description" content="Explore LAD Global's comprehensive travel services: visa assistance, curated holiday tour packages, flight & hotel enquiry assistance, study abroad, and international residency guidance.">
+  <link rel="stylesheet" href="css/prototype.css">
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="home.html" class="brand-logo" aria-label="LAD Global Travels Home">
+        <span class="brand-mark">LAD</span>
+        <div>
+          <span class="brand-name">LAD Global Travels</span>
+          <span class="brand-tagline">Explore • Discover • Experience</span>
+        </div>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="home.html" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li><a href="package-detail.html" class="nav-link">Tour Packages</a></li>
+          <li><a href="home.html#faqSection" class="nav-link">FAQs</a></li>
+          <li><a href="enquiry.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta-group">
+        <a href="enquiry.html" class="btn btn-accent btn-sm">Plan Your Trip</a>
+        <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding: var(--space-12) 0;">
+      <div class="container">
+        <span class="hero-subtitle">Comprehensive Global Travel Solutions</span>
+        <h1 class="hero-title" style="font-size: 2.5rem;">Dedicated Services Designed Around Your Travel Goals</h1>
+        <p class="hero-description" style="max-width: 650px;">
+          Whether preparing a critical visa application, booking a dream holiday, or seeking guidance on international study or residency programs, our experienced consultants in Lagos guide you every step of the way.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Detailed Directory -->
+    <section class="section">
+      <div class="container">
+        <div style="display: flex; flex-direction: column; gap: var(--space-8);">
+
+          <!-- Service 1: Visa Assistance -->
+          <div id="visa" class="card" style="padding: var(--space-8);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-4);">
+              <div>
+                <span class="badge badge-info" style="margin-bottom: var(--space-2);">Document Advisory</span>
+                <h2>1. Visa Assistance & Application Advisory</h2>
+              </div>
+              <a href="enquiry.html?service=visa" class="btn btn-primary">Start Visa Enquiry →</a>
+            </div>
+            <p class="text-muted" style="line-height: 1.7; margin-bottom: var(--space-4);">
+              Navigating foreign embassy requirements can be daunting. LAD Global provides thorough document checklist screening, application form vetting, cover letter structuring, financial proof presentation advice, and interview preparation for destinations including the UK, USA, Canada, Schengen Area, Kenya, South Africa, China, and Dubai.
+            </p>
+            <div style="background-color: var(--color-warning-bg); border-left: 4px solid var(--color-warning); padding: var(--space-4); border-radius: var(--radius-sm); font-size: var(--font-size-sm); color: #7A3E00;">
+              <strong>Important Compliance Notice:</strong> Visa approvals are at the sole and independent discretion of the destination country's embassy, consulate, or high commission. LAD Global Travels and Tours does not issue visas and never provides false guarantees of approval.
+            </div>
+          </div>
+
+          <!-- Service 2: Tour Packages -->
+          <div id="tours" class="card" style="padding: var(--space-8);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-4);">
+              <div>
+                <span class="badge badge-bookable" style="margin-bottom: var(--space-2);">Curated Holidays</span>
+                <h2>2. International & Domestic Tour Packages</h2>
+              </div>
+              <a href="package-detail.html" class="btn btn-accent">View Packages Directory →</a>
+            </div>
+            <p class="text-muted" style="line-height: 1.7; margin-bottom: var(--space-4);">
+              From thrilling Kenyan safaris and modern Dubai city escapes to serene Rwandan nature treks and Ghanaian cultural tours, we curate full-service holiday itineraries. Packages include verified luxury or boutique accommodation, airport transfers, guided excursions, and entry permits with transparent NGN pricing.
+            </p>
+          </div>
+
+          <!-- Service 3: Flight Booking Assistance -->
+          <div id="flights" class="card" style="padding: var(--space-8); border-left: 4px solid var(--color-primary-light);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-4);">
+              <div>
+                <span class="badge badge-enquiry" style="margin-bottom: var(--space-2);">Enquiry-Only Service</span>
+                <h2>3. Flight Booking Assistance (Domestic & International)</h2>
+              </div>
+              <a href="enquiry.html?service=flights" class="btn btn-outline">Request Flight Consultation →</a>
+            </div>
+            <p class="text-muted" style="line-height: 1.7; margin-bottom: var(--space-4);">
+              Avoid routing confusion and hidden airline fees. Our flight booking consultants analyze flight schedules, locate optimal transit times, handle complex multi-city routes, assist with group allocations, and coordinate flight date modifications directly with authorized carrier reservation desks.
+            </p>
+            <div style="background-color: var(--color-surface-subtle); padding: var(--space-3); border-radius: var(--radius-sm); font-size: var(--font-size-xs); color: var(--color-text-muted);">
+              ℹ️ <strong>Service Boundary:</strong> LAD Global operates as a dedicated travel agency consultancy. This website is not an automated self-service airline booking engine. All flight quotes and reservations are curated by human travel experts upon receiving your travel dates and route requirements.
+            </div>
+          </div>
+
+          <!-- Service 4: Hotel Reservations Assistance -->
+          <div id="hotels" class="card" style="padding: var(--space-8); border-left: 4px solid var(--color-primary-light);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-4);">
+              <div>
+                <span class="badge badge-enquiry" style="margin-bottom: var(--space-2);">Enquiry-Only Service</span>
+                <h2>4. Hotel Reservation Assistance</h2>
+              </div>
+              <a href="enquiry.html?service=hotels" class="btn btn-outline">Request Hotel Recommendations →</a>
+            </div>
+            <p class="text-muted" style="line-height: 1.7; margin-bottom: var(--space-4);">
+              Finding safe, clean, and strategically situated lodging in unfamiliar foreign cities is critical. We recommend and book vetted hotels, serviced apartments, and luxury resorts that match your travel purpose (business meetings, family holidays, or embassy appointments).
+            </p>
+            <div style="background-color: var(--color-surface-subtle); padding: var(--space-3); border-radius: var(--radius-sm); font-size: var(--font-size-xs); color: var(--color-text-muted);">
+              ℹ️ <strong>Service Boundary:</strong> We verify availability directly with hotel partners. We do not provide an unvetted instant hotel inventory browser.
+            </div>
+          </div>
+
+          <!-- Service 5: Study Abroad -->
+          <div id="study" class="card" style="padding: var(--space-8);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-4);">
+              <div>
+                <span class="badge badge-info" style="margin-bottom: var(--space-2);">Education Guidance</span>
+                <h2>5. Study Abroad & Student Visa Guidance</h2>
+              </div>
+              <a href="enquiry.html?service=study" class="btn btn-primary">Enquire for Study Abroad →</a>
+            </div>
+            <p class="text-muted" style="line-height: 1.7;">
+              Guidance for prospective students seeking undergraduate or postgraduate degrees in Canada, the United Kingdom, Europe, and the United States. We assist with course and institution identification, application document reviews, and the subsequent study permit/student visa application roadmap.
+            </p>
+          </div>
+
+          <!-- Service 6: Canada PR -->
+          <div id="pr" class="card" style="padding: var(--space-8);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-4);">
+              <div>
+                <span class="badge badge-info" style="margin-bottom: var(--space-2);">Immigration Advisory</span>
+                <h2>6. Canada Permanent Residency (PR) Guidance</h2>
+              </div>
+              <a href="enquiry.html?service=canada-pr" class="btn btn-primary">Request PR Consultation →</a>
+            </div>
+            <p class="text-muted" style="line-height: 1.7;">
+              Consultation on Canadian economic immigration streams, including Express Entry (Federal Skilled Worker, Canadian Experience Class) and Provincial Nominee Programs (PNP). We assist you in understanding CRS score factors, Educational Credential Assessments (ECA), language requirements (IELTS/TEF), and profile preparation.
+            </p>
+          </div>
+
+          <!-- Service 7 & 8: CBI and RBI -->
+          <div class="grid-2">
+            <div id="cbi" class="card" style="padding: var(--space-6);">
+              <span class="badge badge-gold" style="margin-bottom: var(--space-2); align-self: flex-start;">Global Mobility</span>
+              <h3>7. Citizenship by Investment (CBI)</h3>
+              <p class="text-muted" style="font-size: var(--font-size-sm); line-height: 1.6; margin-bottom: var(--space-4);">
+                Advisory on legal, authorized economic citizenship programs across verified Caribbean and European jurisdictions, unlocking visa-free global travel and financial diversification.
+              </p>
+              <a href="enquiry.html?service=cbi" class="btn btn-outline btn-sm">Enquire on CBI Programs</a>
+            </div>
+
+            <div id="rbi" class="card" style="padding: var(--space-6);">
+              <span class="badge badge-gold" style="margin-bottom: var(--space-2); align-self: flex-start;">Global Mobility</span>
+              <h3>8. Residency by Investment (RBI)</h3>
+              <p class="text-muted" style="font-size: var(--font-size-sm); line-height: 1.6; margin-bottom: var(--space-4);">
+                Consultation on Golden Visa and residency-by-investment frameworks across leading destinations, providing international residency rights, business access, and educational pathways for families.
+              </p>
+              <a href="enquiry.html?service=rbi" class="btn btn-outline btn-sm">Enquire on RBI Programs</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>© 2026 LAD Global Travels and Tours. All Rights Reserved.</div>
+      <div>Office: SF41, Ikorodu Complex, Ita Elewa, Ikorodu, Lagos</div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/2347017597650" class="whatsapp-floating" target="_blank" rel="noopener">
+    <span>💬</span>
+    <span>Chat on WhatsApp</span>
+  </a>
+
+  <script src="js/prototype.js"></script>
+</body>
+</html>

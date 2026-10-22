@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LAD Global Travels and Tours — UI/UX Prototypes (Phase P01)</title>
+  <link rel="stylesheet" href="css/prototype.css">
+  <style>
+    .prototype-badge { background-color: var(--color-accent); color: var(--color-primary-dark); padding: 4px 10px; border-radius: var(--radius-pill); font-size: var(--font-size-xs); font-weight: 700; }
+    .hub-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-mark">LAD</span>
+        <div>
+          <span class="brand-name">LAD Global Travels & Tours</span>
+          <span class="brand-tagline">Phase P01 — UI/UX Prototype Suite</span>
+        </div>
+      </a>
+      <span class="prototype-badge">Pure HTML5 / CSS3 / Vanilla JS</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding: var(--space-10) 0;">
+      <div class="container">
+        <span class="hero-subtitle">Phase P01 Demonstration & Review</span>
+        <h1 class="hero-title" style="font-size: 2.25rem;">Interactive Prototype Suite</h1>
+        <p class="hero-description" style="max-width: 700px; margin-bottom: 0;">
+          Review the responsive layouts, information architecture, accessible forms, and distinct enquiry vs. booking flows designed for LAD Global Travels and Tours. Built with zero frameworks, zero external build dependencies, and strictly aligned with the Project Source of Truth.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 style="margin-bottom: var(--space-2);">Public Pages Prototypes</h2>
+        <p class="text-muted" style="margin-bottom: var(--space-6);">Explore the customer-facing user journeys across mobile and desktop breakpoints.</p>
+
+        <div class="grid-3">
+          <div class="hub-card">
+            <div>
+              <span class="badge badge-info" style="margin-bottom: var(--space-3);">Entrypoint</span>
+              <h3 style="margin-bottom: var(--space-2);">1. Public Home Page</h3>
+              <p class="text-muted" style="font-size: var(--font-size-sm); margin-bottom: var(--space-4);">
+                Features brand hero, quick CTA, selected services with clear badges, destination cards, featured tour packages, FAQ preview, and floating WhatsApp.
+              </p>
+            </div>
+            <a href="home.html" class="btn btn-primary btn-block">Launch Home Prototype →</a>
+          </div>
+
+          <div class="hub-card">
+            <div>
+              <span class="badge badge-enquiry" style="margin-bottom: var(--space-3);">Services Catalogue</span>
+              <h3 style="margin-bottom: var(--space-2);">2. Services Overview</h3>
+              <p class="text-muted" style="font-size: var(--font-size-sm); margin-bottom: var(--space-4);">
+                Details all 8 core services. Highlights that flight and hotel assistance are strictly enquiry-only, not automated booking engines.
+              </p>
+            </div>
+            <a href="services.html" class="btn btn-primary btn-block">Launch Services Prototype →</a>
+          </div>
+
+          <div class="hub-card">
+            <div>
+              <span class="badge badge-bookable" style="margin-bottom: var(--space-3);">Conversion Flow</span>
+              <h3 style="margin-bottom: var(--space-2);">3. Package Detail & Booking</h3>
+              <p class="text-muted" style="font-size: var(--font-size-sm); margin-bottom: var(--space-4);">
+                Showcases itinerary, inclusions/exclusions, dates, and the two distinct conversion paths (Request Quote vs. Paystack / Bank Transfer).
+              </p>
+            </div>
+            <a href="package-detail.html" class="btn btn-primary btn-block">Launch Package Prototype →</a>
+          </div>
+
+          <div class="hub-card">
+            <div>
+              <span class="badge badge-warning" style="margin-bottom: var(--space-3);">Enquiry & Lead Capture</span>
+              <h3 style="margin-bottom: var(--space-2);">4. Accessible Enquiry Form</h3>
+              <p class="text-muted" style="font-size: var(--font-size-sm); margin-bottom: var(--space-4);">
+                Demonstrates WCAG-accessible form fields, error validation states, field hints, honeypot protection, and privacy disclaimer.
+              </p>
+            </div>
+            <a href="enquiry.html" class="btn btn-primary btn-block">Launch Enquiry Prototype →</a>
+          </div>
+
+          <div class="hub-card">
+            <div>
+              <span class="badge badge-gold" style="margin-bottom: var(--space-3);">Protected Console</span>
+              <h3 style="margin-bottom: var(--space-2);">5. Minimal Admin Dashboard</h3>
+              <p class="text-muted" style="font-size: var(--font-size-sm); margin-bottom: var(--space-4);">
+                Clean single-admin interface featuring key metrics, pending manual bank transfer verification table, and enquiry CRM status management.
+              </p>
+            </div>
+            <a href="admin-dashboard.html" class="btn btn-primary btn-block">Launch Admin Prototype →</a>
+          </div>
+
+          <div class="hub-card" style="background-color: var(--color-surface-subtle); border-style: dashed;">
+            <div>
+              <span class="badge" style="background: #E2E8F0; color: #4A5568; margin-bottom: var(--space-3);">Specification</span>
+              <h3 style="margin-bottom: var(--space-2);">Documentation</h3>
+              <p class="text-muted" style="font-size: var(--font-size-sm); margin-bottom: var(--space-4);">
+                Read the comprehensive IA, UI design tokens, component breakdown, and accessibility standards document.
+              </p>
+            </div>
+            <a href="../IA_AND_UI_SPECIFICATION.md" class="btn btn-outline btn-block">View Spec Document ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <span>LAD Global Travels and Tours — Internal Design Artifact</span>
+      <span>Status: Phase P01 In Review (Awaiting Client Approval)</span>
+    </div>
+  </footer>
+</body>
+</html>

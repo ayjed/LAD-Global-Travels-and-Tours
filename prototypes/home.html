@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LAD Global Travels and Tours — Explore • Discover • Experience</title>
+  <meta name="description" content="Professional travel assistance, visa guidance, and curated international tour packages from Lagos, Nigeria to destinations worldwide.">
+  <link rel="stylesheet" href="css/prototype.css">
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="home.html" class="brand-logo" aria-label="LAD Global Travels and Tours Home">
+        <span class="brand-mark">LAD</span>
+        <div>
+          <span class="brand-name">LAD Global Travels</span>
+          <span class="brand-tagline">Explore • Discover • Experience</span>
+        </div>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="home.html" class="nav-link active">Home</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="package-detail.html" class="nav-link">Tour Packages</a></li>
+          <li><a href="#faqSection" class="nav-link">FAQs</a></li>
+          <li><a href="enquiry.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta-group">
+        <a href="enquiry.html" class="btn btn-accent btn-sm">Plan Your Trip</a>
+        <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Off-Canvas Drawer -->
+  <div id="mobileNavDrawer" class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-links">
+      <li><a href="home.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="services.html" class="mobile-nav-link">Our Services</a></li>
+      <li><a href="package-detail.html" class="mobile-nav-link">Tour Packages</a></li>
+      <li><a href="#faqSection" class="mobile-nav-link">FAQs</a></li>
+      <li><a href="enquiry.html" class="mobile-nav-link">Contact Us</a></li>
+      <li style="margin-top: var(--space-4);"><a href="enquiry.html" class="btn btn-primary btn-block">Plan Your Trip</a></li>
+    </ul>
+  </div>
+
+  <main id="mainContent">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-subtitle">Personalized Travel & Global Mobility</span>
+          <h1 class="hero-title">Your Journey. Our Commitment. A World of Possibilities.</h1>
+          <p class="hero-description">
+            Experience stress-free global mobility. From expert visa guidance and personalized flight/hotel consultation to curated international holiday packages, we craft seamless journeys from Lagos to the world.
+          </p>
+          <div class="hero-cta-group">
+            <a href="package-detail.html" class="btn btn-accent btn-lg">Browse Tour Packages</a>
+            <a href="enquiry.html" class="btn btn-outline btn-lg" style="color: #FFFFFF; border-color: rgba(255,255,255,0.4);">Make an Enquiry</a>
+          </div>
+          <div class="hero-trust-bar">
+            <div class="trust-item"><span class="trust-icon">✓</span> Expert Visa Checklist Review</div>
+            <div class="trust-item"><span class="trust-icon">✓</span> Verified Bank & Paystack Payments</div>
+            <div class="trust-item"><span class="trust-icon">✓</span> Fast WhatsApp Consultation</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section class="section">
+      <div class="container">
+        <div class="flex-between" style="margin-bottom: var(--space-8); flex-wrap: wrap; gap: var(--space-4);">
+          <div>
+            <span class="badge badge-gold" style="margin-bottom: var(--space-2);">What We Do</span>
+            <h2>Our Core Travel & Mobility Services</h2>
+          </div>
+          <a href="services.html" class="btn btn-outline">View All 8 Services →</a>
+        </div>
+
+        <div class="grid-4">
+          <!-- Service 1: Visa -->
+          <div class="service-card">
+            <div class="service-icon-box">📋</div>
+            <span class="badge badge-info" style="align-self: flex-start; margin-bottom: var(--space-3);">Advisory</span>
+            <h3 class="service-title">Visa Assistance</h3>
+            <p class="service-desc">Complete document checklist preparation, application review, and embassy appointment scheduling for business, tourist, and visitor visas.</p>
+            <div class="service-notice">⚠️ Legal notice: Visa approvals are strictly at embassy discretion; no guarantee is promised.</div>
+            <a href="enquiry.html?service=visa" class="btn btn-outline btn-sm btn-block">Enquire for Visa</a>
+          </div>
+
+          <!-- Service 2: Tours -->
+          <div class="service-card">
+            <div class="service-icon-box">🌍</div>
+            <span class="badge badge-bookable" style="align-self: flex-start; margin-bottom: var(--space-3);">Curated</span>
+            <h3 class="service-title">Tour Packages</h3>
+            <p class="service-desc">Tailored group and individual holiday itineraries across Kenya, Rwanda, Ghana, Dubai, China, and Europe with hotel, transport, and tours included.</p>
+            <a href="package-detail.html" class="btn btn-primary btn-sm btn-block">Explore Packages</a>
+          </div>
+
+          <!-- Service 3: Flights (Enquiry-Only) -->
+          <div class="service-card">
+            <div class="service-icon-box">✈️</div>
+            <span class="badge badge-enquiry" style="align-self: flex-start; margin-bottom: var(--space-3);">Enquiry-Only</span>
+            <h3 class="service-title">Flight Booking Assistance</h3>
+            <p class="service-desc">Personalized domestic and international flight search, fare comparison, group ticketing, and itinerary adjustments handled by dedicated agents.</p>
+            <div class="service-notice">ℹ️ Assistance service only. Not an automated flight search engine.</div>
+            <a href="enquiry.html?service=flights" class="btn btn-outline btn-sm btn-block">Request Flight Quote</a>
+          </div>
+
+          <!-- Service 4: Hotels (Enquiry-Only) -->
+          <div class="service-card">
+            <div class="service-icon-box">🏨</div>
+            <span class="badge badge-enquiry" style="align-self: flex-start; margin-bottom: var(--space-3);">Enquiry-Only</span>
+            <h3 class="service-title">Hotel Reservations</h3>
+            <p class="service-desc">Handpicked accommodations matching your budget, verified reviews, strategic city locations, and safe payment facilitation.</p>
+            <div class="service-notice">ℹ️ Assistance service only. We verify room availability directly.</div>
+            <a href="enquiry.html?service=hotels" class="btn btn-outline btn-sm btn-block">Request Hotel Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Tour Packages Section -->
+    <section class="section section-subtle">
+      <div class="container">
+        <div class="flex-between" style="margin-bottom: var(--space-8); flex-wrap: wrap; gap: var(--space-4);">
+          <div>
+            <span class="badge badge-gold" style="margin-bottom: var(--space-2);">Featured Itineraries</span>
+            <h2>Handcrafted Holiday Packages</h2>
+          </div>
+          <p class="text-muted" style="max-width: 480px;">All packages feature transparent pricing in NGN, clear day-by-day itineraries, and vetted local partners.</p>
+        </div>
+
+        <div class="grid-3">
+          <!-- Package 1: Kenya Safari (Payable) -->
+          <div class="card">
+            <div class="card-media" style="background: linear-gradient(135deg, #135EB0 0%, #092A60 100%); display: flex; align-items: center; justify-content: center; color: #FFFFFF;">
+              <span style="font-size: 3rem;">🦁</span>
+              <span class="card-badge-top badge badge-bookable">Online Payment Enabled</span>
+            </div>
+            <div class="card-body">
+              <span class="card-destination">Kenya • 6 Days / 5 Nights</span>
+              <h3 class="card-title">Nairobi & Maasai Mara Explorer</h3>
+              <p class="card-text">Experience the great wildlife migration, luxury safari camp lodging, guided game drives, and Nairobi city tour.</p>
+              <div class="card-footer">
+                <div class="price-display">
+                  <span class="price-label">Starting from</span>
+                  <span class="price-amount">₦1,450,000 <span style="font-size: var(--font-size-xs); font-weight: 500;">/ person</span></span>
+                </div>
+                <a href="package-detail.html" class="btn btn-primary btn-sm">View & Book</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Package 2: Dubai Leisure (Payable) -->
+          <div class="card">
+            <div class="card-media" style="background: linear-gradient(135deg, #E6AE34 0%, #092A60 100%); display: flex; align-items: center; justify-content: center; color: #FFFFFF;">
+              <span style="font-size: 3rem;">🏙️</span>
+              <span class="card-badge-top badge badge-bookable">Online Payment Enabled</span>
+            </div>
+            <div class="card-body">
+              <span class="card-destination">United Arab Emirates • 5 Days</span>
+              <h3 class="card-title">Dubai Luxury City & Desert Safari</h3>
+              <p class="card-text">Desert dune bashing with BBQ dinner, Marina luxury yacht cruise, Dubai Mall experience, and 4-star accommodation.</p>
+              <div class="card-footer">
+                <div class="price-display">
+                  <span class="price-label">Starting from</span>
+                  <span class="price-amount">₦1,180,000 <span style="font-size: var(--font-size-xs); font-weight: 500;">/ person</span></span>
+                </div>
+                <a href="package-detail.html" class="btn btn-primary btn-sm">View & Book</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Package 3: Rwanda Gorilla Trek (Enquiry / Custom Quote) -->
+          <div class="card">
+            <div class="card-media" style="background: linear-gradient(135deg, #0E7C3A 0%, #092A60 100%); display: flex; align-items: center; justify-content: center; color: #FFFFFF;">
+              <span style="font-size: 3rem;">🦍</span>
+              <span class="card-badge-top badge badge-enquiry">Custom Quote On Request</span>
+            </div>
+            <div class="card-body">
+              <span class="card-destination">Rwanda • 4 Days / 3 Nights</span>
+              <h3 class="card-title">Volcanoes National Park Gorilla Trek</h3>
+              <p class="card-text">Once-in-a-lifetime mountain gorilla trekking permits, Kigali cultural tour, scenic transfer, and boutique eco-lodge stay.</p>
+              <div class="card-footer">
+                <div class="price-display">
+                  <span class="price-label">Pricing</span>
+                  <span class="price-amount" style="font-size: 1rem; color: var(--color-primary-light);">Quote On Request</span>
+                </div>
+                <a href="enquiry.html?package=rwanda-gorilla" class="btn btn-outline btn-sm">Request Itinerary</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us / Trust Pillars -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center" style="max-width: 680px; margin: 0 auto var(--space-12);">
+          <span class="badge badge-gold" style="margin-bottom: var(--space-2);">Why LAD Global</span>
+          <h2>Travel with Confidence and Full Transparency</h2>
+          <p class="text-muted">We eliminate the guesswork and stress from your international journeys.</p>
+        </div>
+
+        <div class="grid-3">
+          <div style="text-align: center; padding: var(--space-4);">
+            <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">🛡️</div>
+            <h3 style="margin-bottom: var(--space-2);">Secure Verified Payments</h3>
+            <p class="text-muted" style="font-size: var(--font-size-sm);">Choose between instant Paystack card/bank checkout or manual direct bank transfer to our verified corporate bank account.</p>
+          </div>
+          <div style="text-align: center; padding: var(--space-4);">
+            <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">📄</div>
+            <h3 style="margin-bottom: var(--space-2);">Thorough Document Screening</h3>
+            <p class="text-muted" style="font-size: var(--font-size-sm);">Every visa file is checked for completeness and formatting to significantly minimize common embassy rejection reasons.</p>
+          </div>
+          <div style="text-align: center; padding: var(--space-4);">
+            <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">💬</div>
+            <h3 style="margin-bottom: var(--space-2);">Responsive Support</h3>
+            <p class="text-muted" style="font-size: var(--font-size-sm);">Direct one-on-one consultation on WhatsApp. Real advisors in Lagos ready to assist you throughout your journey.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Preview Section (Accordion) -->
+    <section id="faqSection" class="section section-subtle">
+      <div class="container container-narrow">
+        <div class="text-center" style="margin-bottom: var(--space-8);">
+          <span class="badge badge-info" style="margin-bottom: var(--space-2);">Got Questions?</span>
+          <h2>Frequently Asked Questions</h2>
+          <p class="text-muted">Answers to common queries regarding our services and bookings.</p>
+        </div>
+
+        <div class="accordion">
+          <!-- FAQ 1 -->
+          <div class="accordion-item is-open">
+            <button class="accordion-header" aria-expanded="true">
+              Can you guarantee that my visa will be approved?
+            </button>
+            <div class="accordion-content">
+              <p><strong>No.</strong> No agency or individual can legally guarantee visa issuance. Visa approval is the sole prerogative of the respective country's embassy, consulate, or high commission. LAD Global provides thorough document preparation, guidance, and verification to present your application in the strongest possible manner.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              How do I pay for a tour package?
+            </button>
+            <div class="accordion-content">
+              <p>For packages marked with online booking, you can pay directly on our website using <strong>Paystack</strong> (debit card, bank transfer, USSD) or via <strong>Direct Manual Bank Transfer</strong> to our verified corporate account. Bank transfers remain pending until verified on our bank statement.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              Do you offer live flight search and hotel bookings on the site?
+            </button>
+            <div class="accordion-content">
+              <p>We provide <strong>personalized flight and hotel booking assistance</strong> through our experienced travel consultants. You can submit your travel dates and route via our enquiry form, and an agent will curate the best options, compare fares, and confirm reservations for you.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              Where is your office located?
+            </button>
+            <div class="accordion-content">
+              <p>Our office is located at <strong>SF41, Ikorodu Complex, Ita Elewa, adjacent to High Court, Ikorodu, Lagos, Nigeria</strong>. You are welcome to visit us during regular business hours or reach us on WhatsApp at <strong>07017597650</strong>.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center" style="margin-top: var(--space-8);">
+          <a href="enquiry.html" class="btn btn-outline">Have More Questions? Contact Our Team →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="grid-4" style="gap: var(--space-8);">
+        <div>
+          <div class="brand-logo" style="margin-bottom: var(--space-3);">
+            <span class="brand-mark" style="padding: 4px 10px; font-size: 1rem;">LAD</span>
+            <span class="brand-name" style="color: #FFFFFF;">LAD Global</span>
+          </div>
+          <p style="font-size: var(--font-size-sm); line-height: 1.5; color: #CBD5E1;">
+            Your trusted travel agency and global mobility partner. Making international journeys, study abroad, and tour packages accessible, authentic, and stress-free.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="color: var(--color-accent); margin-bottom: var(--space-3); font-size: 1rem;">Our Services</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--font-size-sm);">
+            <li><a href="services.html#visa">Visa Assistance</a></li>
+            <li><a href="package-detail.html">International Tour Packages</a></li>
+            <li><a href="services.html#flights">Flight Booking Assistance</a></li>
+            <li><a href="services.html#hotels">Hotel Reservations</a></li>
+            <li><a href="services.html#study">Study Abroad Advisory</a></li>
+            <li><a href="services.html#pr">Canada PR Guidance</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="color: var(--color-accent); margin-bottom: var(--space-3); font-size: 1rem;">Quick Links</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--font-size-sm);">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="package-detail.html">Browse Packages</a></li>
+            <li><a href="#faqSection">FAQs</a></li>
+            <li><a href="enquiry.html">General Enquiry Form</a></li>
+            <li><a href="admin-dashboard.html">Admin Portal Demo</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="color: var(--color-accent); margin-bottom: var(--space-3); font-size: 1rem;">Office & Contact</h4>
+          <p style="font-size: var(--font-size-sm); color: #CBD5E1; margin-bottom: var(--space-2);">
+            📍 SF41, Ikorodu Complex, Ita Elewa, adjacent to High Court, Ikorodu, Lagos, Nigeria.
+          </p>
+          <p style="font-size: var(--font-size-sm); color: #CBD5E1; margin-bottom: var(--space-2);">
+            📞 Phone: <a href="tel:07017597650">07017597650</a>
+          </p>
+          <p style="font-size: var(--font-size-sm); color: #CBD5E1;">
+            💬 WhatsApp: <a href="https://wa.me/2347017597650" target="_blank" rel="noopener">Chat with Us</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 LAD Global Travels and Tours. All Rights Reserved.</div>
+        <div style="display: flex; gap: var(--space-4);">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Refund Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Persistent Floating WhatsApp Button -->
+  <a href="https://wa.me/2347017597650" class="whatsapp-floating" target="_blank" rel="noopener" aria-label="Chat with LAD Global Travels on WhatsApp">
+    <span style="font-size: 1.25rem;">💬</span>
+    <span>Chat on WhatsApp</span>
+  </a>
+
+  <!-- Prototype Vanilla Scripts -->
+  <script src="js/prototype.js"></script>
+</body>
+</html>

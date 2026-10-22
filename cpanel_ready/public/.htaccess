@@ -1,0 +1,40 @@
+# ==============================================================================
+# LAD GLOBAL TRAVELS AND TOURS — PUBLIC FRONT CONTROLLER REWRITE
+# Routes all non-static requests to index.php
+# ==============================================================================
+
+Options -Indexes -MultiViews
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Prevent direct access to hidden files
+    RewriteRule "(^|/)\.(?!well-known)" - [F]
+
+    # Enforce HTTPS on Production (skips local development hosts)
+    RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)(:\d+)?$ [NC]
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # If the requested filename exists as a real file or directory, serve it directly
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Otherwise forward the request to the PHP front controller
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    # Security Headers (OWASP Recommended)
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+    # HSTS (Strict-Transport-Security) enabled on HTTPS
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" "expr=%{HTTPS} == 'on'"
+
+    # Content Security Policy (Compatible with inline styles, vanilla scripts, and Paystack checkout)
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://js.paystack.co; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://api.paystack.co; frame-src 'self' https://checkout.paystack.com; form-action 'self' https://checkout.paystack.com;"
+</IfModule>
