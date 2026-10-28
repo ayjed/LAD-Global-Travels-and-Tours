@@ -1,6 +1,6 @@
 -- =============================================================================
 -- LAD GLOBAL TRAVELS AND TOURS — PRODUCTION DATABASE EXPORT
--- Generated: 2026-10-22 15:49:22
+-- Generated: 2026-10-24 19:50:28
 -- Target: MySQL 8.0+ / MariaDB 10.4+ (utf8mb4_unicode_ci)
 -- =============================================================================
 
@@ -302,6 +302,6 @@ INSERT INTO `package_images` (`id`, `package_id`, `image_path`, `alt_text`, `dis
 -- -----------------------------------------------------------------------------
 -- Initial Super Administrator Account
 -- -----------------------------------------------------------------------------
-INSERT INTO `admins` (`id`, `username`, `email`, `password_hash`, `failed_login_attempts`, `locked_until`, `created_at`) VALUES (19, 'admin', 'admin@ladglobaltravels.com', '$2y$10$OaITyeO53unLBsW7bCp4fOGQNuu3bNXo3.huO8UwTqiowQt1PymuO', 0, NULL, NOW()) ON DUPLICATE KEY UPDATE `username` = VALUES(`username`), `email` = VALUES(`email`), `password_hash` = VALUES(`password_hash`);
+INSERT INTO `admins` (`id`, `username`, `email`, `password_hash`, `failed_login_attempts`, `locked_until`, `created_at`) VALUES (19, 'admin', 'admin@ladglobaltravels.com', '$2y$10$mEneJh/9hn8KLnK5tx5cTencfjBR9eophYf9NYKvOxEBSP8pd2kEu', 0, NULL, NOW()) ON DUPLICATE KEY UPDATE `username` = VALUES(`username`), `email` = VALUES(`email`), `password_hash` = VALUES(`password_hash`);
 
 SET FOREIGN_KEY_CHECKS = 1;

@@ -40,11 +40,11 @@ class SettingService
         
         // Email Routing & Notifications
         'mail_from_name'                => 'LAD Global Travels and Tours',
-        'mail_from_address'             => 'info@ladglobal.com',
-        'notification_email_enquiries'  => 'sales@ladglobal.com',
-        'notification_email_visa'       => 'visa@ladglobal.com',
-        'notification_email_payments'   => 'admin@ladglobal.com',
-        'notification_email_management' => 'lanre@ladglobal.com',
+        'mail_from_address'             => 'info@ladglobaltravels.com',
+        'notification_email_enquiries'  => 'info@ladglobaltravels.com',
+        'notification_email_visa'       => 'info@ladglobaltravels.com',
+        'notification_email_payments'   => 'info@ladglobaltravels.com',
+        'notification_email_management' => 'info@ladglobaltravels.com',
         
         // Verified Company Bank Details (Protected Configuration)
         'bank_name'                     => 'Zenith Bank PLC',

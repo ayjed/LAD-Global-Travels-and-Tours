@@ -30,7 +30,7 @@ class MailService
         if (str_contains($serviceType, 'visa') || str_contains($serviceType, 'pr') || str_contains($serviceType, 'cbi') || str_contains($serviceType, 'rbi')) {
             $adminEmail = $routing['visa'] ?? $routing['enquiries'];
         } else {
-            $adminEmail = $routing['enquiries'] ?? (string)Env::get('ADMIN_NOTIFICATION_EMAIL', 'sales@ladglobal.com');
+            $adminEmail = $routing['enquiries'] ?? (string)Env::get('ADMIN_NOTIFICATION_EMAIL', 'info@ladglobaltravels.com');
         }
         $ref = Security::e($enquiry['reference'] ?? 'N/A');
         $name = Security::e($enquiry['full_name'] ?? 'N/A');

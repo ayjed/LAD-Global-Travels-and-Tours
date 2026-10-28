@@ -93,6 +93,91 @@ class AdminController
     }
 
     /**
+     * Emergency Admin Recovery View.
+     */
+    public function recoveryForm(): void
+    {
+        $pdo = Database::getConnection();
+        $stmt = $pdo->query("SELECT id, username, email, failed_login_attempts, locked_until FROM admins");
+        $admins = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        View::render('admin/recovery', [
+            'pageTitle' => 'Emergency Admin Recovery',
+            'admins'    => $admins
+        ], null);
+    }
+
+    /**
+     * Process Emergency Admin Password Reset.
+     */
+    public function recoverySubmit(): void
+    {
+        $username = trim((string)($_POST['username'] ?? 'admin'));
+        $newPassword = (string)($_POST['new_password'] ?? '');
+
+        if (strlen($newPassword) < 8) {
+            Response::setFlash('danger', 'Password must be at least 8 characters long.');
+            Response::redirect('/reset-admin');
+        }
+
+        try {
+            $hash = Security::hashPassword($newPassword);
+            $pdo = Database::getConnection();
+
+            // Check if any admin exists
+            $stmt = $pdo->query("SELECT id FROM admins LIMIT 1");
+            $firstAdmin = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($firstAdmin) {
+                // Update the existing admin record
+                $update = $pdo->prepare("UPDATE admins SET username = :u, password_hash = :hash, failed_login_attempts = 0, locked_until = NULL WHERE id = :id");
+                $update->execute([
+                    ':u'    => $username,
+                    ':hash' => $hash,
+                    ':id'   => $firstAdmin['id']
+                ]);
+            } else {
+                // Insert fresh admin record with ID 1
+                $insert = $pdo->prepare("INSERT INTO admins (id, username, email, password_hash, failed_login_attempts, locked_until, created_at) VALUES (1, :u, :e, :h, 0, NULL, NOW())");
+                $insert->execute([
+                    ':u' => $username,
+                    ':e' => $username . '@ladglobaltravels.com',
+                    ':h' => $hash
+                ]);
+            }
+
+            // Clear rate limiter files safely
+            try {
+                $tempDir = defined('STORAGE_PATH') ? STORAGE_PATH . '/temp' : ROOT_PATH . '/storage/temp';
+                if (is_dir($tempDir)) {
+                    $files = @glob($tempDir . '/rate_limit_*.json');
+                    if (is_array($files)) {
+                        foreach ($files as $f) {
+                            @unlink($f);
+                        }
+                    }
+                }
+                $sysTemp = sys_get_temp_dir();
+                if (!empty($sysTemp) && is_dir($sysTemp)) {
+                    $files = @glob($sysTemp . '/rate_limit_*.json');
+                    if (is_array($files)) {
+                        foreach ($files as $f) {
+                            @unlink($f);
+                        }
+                    }
+                }
+            } catch (Throwable $ignore) {
+            }
+
+            Response::setFlash('success', "SUCCESS! Admin password for '{$username}' updated to: {$newPassword}. Lockout cleared! Click the button below to sign in.");
+            Response::redirect('/reset-admin');
+        } catch (Throwable $e) {
+            Response::setFlash('danger', "Error saving password: " . $e->getMessage());
+            Response::redirect('/reset-admin');
+        }
+    }
+
+    /**
      * Protected Admin Dashboard overview.
      */
     public function dashboard(): void
