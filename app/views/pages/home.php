@@ -10,14 +10,13 @@ use App\Core\Security;
 <section class="hero-home">
   <div class="container">
     <div class="hero-content">
-      <span class="eyebrow-pill">Personalized Travel & Global Mobility</span>
       <h1 class="hero-title" style="font-size: clamp(2.2rem, 4.2vw, 3.4rem); font-weight: 800; line-height: 1.15; margin-bottom: var(--space-4);">
         Your Journey.<br>
         <span style="color: var(--color-accent);">Our Commitment.</span><br>
         A World of Possibilities.
       </h1>
-      <p class="hero-description" style="max-width: 640px; font-size: 1.125rem; line-height: 1.6; color: #E2E8F0; margin-bottom: var(--space-8);">
-        Experience stress-free global mobility. From expert visa guidance and personalized flight consultation to curated international holiday packages, we craft seamless journeys from Lagos to the world.
+      <p class="hero-description" style="max-width: 580px; font-size: 1.125rem; line-height: 1.6; color: #F1F5F9; margin-bottom: var(--space-8);">
+        Expert visa guidance, flight planning, and curated holidays—making travel effortless from Lagos to the world.
       </p>
       <div class="hero-cta-group">
         <a href="/packages" class="btn btn-accent btn-lg" style="font-weight: 700; box-shadow: var(--shadow-md);">Browse Tour Packages →</a>

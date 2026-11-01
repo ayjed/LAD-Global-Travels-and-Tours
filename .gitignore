@@ -1,20 +1,37 @@
 # Environment and secret configuration
 .env
-.env.local
-.env.production
+.env.*
+!.env.example
+!.env.production.example
+
+# Deployment archives and staging directories
+lad_travels_cpanel_upload.zip
+*.zip
+*.tar
+*.gz
+cpanel_ready/
 
 # Storage and logs
 storage/logs/*.log
+storage/logs/*.tmp
 storage/temp/*
 !storage/temp/.gitkeep
 !storage/logs/.gitkeep
 
-# Uploads (ignore uploaded content, preserve directory)
+# Uploads (ignore uploaded content, preserve directory and security rules)
 public/uploads/*
 !public/uploads/.gitkeep
 !public/uploads/.htaccess
+!public/uploads/packages
+public/uploads/packages/*
+!public/uploads/packages/.gitkeep
 
-# IDE and OS files
+# Scratch and debugging artifacts
+scratch/
+*.cookie
+cookie*.txt
+
+# IDE, OS, and temporary files
 .idea/
 .vscode/
 *.suo

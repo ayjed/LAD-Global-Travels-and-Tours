@@ -66,12 +66,6 @@ $router->post('/admin/login', [App\Controllers\AdminController::class, 'loginSub
 $router->post('/admin/logout', [App\Controllers\AdminController::class, 'logout']);
 $router->get('/admin', [App\Controllers\AdminController::class, 'dashboard']);
 
-// Emergency Password Reset Routes (Prevents 404 on recovery)
-$router->get('/reset-admin', [App\Controllers\AdminController::class, 'recoveryForm']);
-$router->post('/reset-admin', [App\Controllers\AdminController::class, 'recoverySubmit']);
-$router->get('/reset-admin.php', [App\Controllers\AdminController::class, 'recoveryForm']);
-$router->post('/reset-admin.php', [App\Controllers\AdminController::class, 'recoverySubmit']);
-
 // 6. Admin Packages Routes (Phase P05)
 $router->get('/admin/packages', [App\Controllers\AdminController::class, 'packages']);
 $router->get('/admin/packages/create', [App\Controllers\AdminController::class, 'createPackageForm']);

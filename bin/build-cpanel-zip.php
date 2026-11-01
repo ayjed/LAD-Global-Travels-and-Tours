@@ -81,6 +81,13 @@ copyDirectory(ROOT_PATH . '/app/services', $stagingDir . '/app/Services');
 echo " • Copying public/ (Assets, images, CSS, JS, front controller)...\n";
 copyDirectory(ROOT_PATH . '/public', $stagingDir . '/public');
 
+// Clean any test-generated uploads from staging (preserve secure directory structure only)
+if (is_dir($stagingDir . '/public/uploads/packages')) {
+    deleteDirectory($stagingDir . '/public/uploads/packages');
+    @mkdir($stagingDir . '/public/uploads/packages', 0755, true);
+    file_put_contents($stagingDir . '/public/uploads/packages/.gitkeep', "# package uploads\n");
+}
+
 // Copy database/
 echo " • Copying database/ (Schemas, migrations & lad_global_production.sql)...\n";
 copyDirectory(ROOT_PATH . '/database', $stagingDir . '/database');
@@ -99,14 +106,13 @@ copy(ROOT_PATH . '/bin/create-admin.php', $stagingDir . '/bin/create-admin.php')
 copy(ROOT_PATH . '/bin/unlock-admin.php', $stagingDir . '/bin/unlock-admin.php');
 
 // Copy Root Files
-echo " • Copying root configuration files (.env.production, .htaccess, instructions)...\n";
-copy(ROOT_PATH . '/.env.production', $stagingDir . '/.env.production');
+echo " • Copying root configuration files (.env.production.example, .htaccess, instructions)...\n";
+copy(ROOT_PATH . '/.env.production', $stagingDir . '/.env.production.example');
 copy(ROOT_PATH . '/.htaccess', $stagingDir . '/.htaccess');
 copy(ROOT_PATH . '/CPANEL_DEPLOYMENT_INSTRUCTIONS.md', $stagingDir . '/CPANEL_DEPLOYMENT_INSTRUCTIONS.md');
 
-// Also place a copy of .env.production as .env in the package with clear instructions
-// (so if user just extracts, it works once edited)
-copy(ROOT_PATH . '/.env.production', $stagingDir . '/.env');
+// NOTE: We deliberately DO NOT create `.env` in the package to prevent accidental
+// overwriting of existing production server configuration upon cPanel unzipping!
 
 // Also place a direct copy of lad_global_production.sql in the package root for extra convenience!
 copy(ROOT_PATH . '/database/lad_global_production.sql', $stagingDir . '/lad_global_production.sql');
