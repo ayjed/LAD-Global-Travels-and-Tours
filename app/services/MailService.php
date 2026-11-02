@@ -17,6 +17,69 @@ use Throwable;
 class MailService
 {
     /**
+     * Determine whether an enquiry represents a Visa, Immigration, or Mobility lead.
+     * Uses explicit service slugs and strict word-boundary matching to prevent
+     * false positive substring collisions (e.g. "Premium Tour", "Spring Holiday",
+     * "Private Safari", "Express Flights" must route to sales@, not visa@).
+     *
+     * @param array $enquiry The enquiry record containing service_type, package_id, etc.
+     * @return bool True if visa/immigration/mobility inquiry, false for tour/general inquiry
+     */
+    public static function isVisaOrImmigrationEnquiry(array $enquiry): bool
+    {
+        $rawService = strtolower(trim((string)($enquiry['service_type'] ?? '')));
+
+        // 1. Explicit Visa, Immigration, and Global Mobility service codes (from SOT & contact.php)
+        $visaCodes = [
+            'visa',
+            'visa-assistance',
+            'visa_assistance',
+            'study',
+            'study-abroad',
+            'study_abroad',
+            'canada_pr',
+            'canada-pr',
+            'cbi',
+            'rbi',
+            'citizenship-by-investment',
+            'residency-by-investment',
+            'permanent_residency',
+            'permanent-residency',
+            'immigration'
+        ];
+        if (in_array($rawService, $visaCodes, true)) {
+            return true;
+        }
+
+        // 2. Explicit Tour, Flight, Hotel, and General Inquiry codes
+        $generalCodes = [
+            'tours',
+            'tour-packages',
+            'flights',
+            'flight-booking',
+            'hotels',
+            'hotel-reservations',
+            'other',
+            'general',
+            'consultation'
+        ];
+        if (in_array($rawService, $generalCodes, true)) {
+            return false;
+        }
+
+        // 3. If tied to a specific Tour Package and does not explicitly name visa in service text
+        if (!empty($enquiry['package_id']) && !preg_match('/\b(visa|visas|immigration|citizenship)\b/i', $rawService)) {
+            return false;
+        }
+
+        // 4. Strict word-boundary regex matching for descriptive text titles
+        // Matches "PR" only as a standalone word (e.g. "Canada PR", "PR Application"), NOT "Premium" or "Spring"
+        $pattern = '/\b(visa|visas|study\s+abroad|student\s+visa|permanent\s+residenc[ey]|pr|cbi|rbi|citizenship|residency|immigration|work\s+permit|express\s+entry)\b/i';
+
+        return (bool)preg_match($pattern, $rawService);
+    }
+
+    /**
      * Send new enquiry alert to the company/admin inbox.
      *
      * @param array $enquiry The persisted enquiry record
@@ -25,9 +88,8 @@ class MailService
      */
     public static function sendEnquiryAdminAlert(array $enquiry, ?array $package = null): bool
     {
-        $serviceType = strtolower((string)($enquiry['service_type'] ?? ''));
         $routing = SettingService::getEmailRouting();
-        if (str_contains($serviceType, 'visa') || str_contains($serviceType, 'pr') || str_contains($serviceType, 'cbi') || str_contains($serviceType, 'rbi')) {
+        if (self::isVisaOrImmigrationEnquiry($enquiry)) {
             $adminEmail = $routing['visa'] ?? $routing['enquiries'];
         } else {
             $adminEmail = $routing['enquiries'] ?? (string)Env::get('ADMIN_NOTIFICATION_EMAIL', 'info@ladglobaltravels.com');

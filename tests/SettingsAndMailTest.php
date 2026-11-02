@@ -203,7 +203,7 @@ assertTest($matchPost !== null, 'Route POST /admin/settings is registered');
 assertTest(isset($matchPost['handler']) && $matchPost['handler'][1] === 'updateSettings', 'POST /admin/settings dispatches AdminController::updateSettings');
 
 // -----------------------------------------------------------------------------
-// 6. Transactional MailService Dynamic Email Routing
+// 6. Transactional MailService Dynamic Email Routing & Classification
 // -----------------------------------------------------------------------------
 echo "\n6. Testing MailService Dynamic Routing & SOT 11 Mailboxes...\n";
 
@@ -217,6 +217,48 @@ SettingService::setMultiple([
     'notification_email_management' => 'lanre@ladglobal.com',
 ]);
 SettingService::clearCache();
+
+// 6A. Regression Suite: Ambiguous Service Names Classification
+echo "  Testing Service Classification & Substring Collision Defense...\n";
+
+$tourAmbiguousCases = [
+    'Dubai Premium Safari',
+    'Spring in Paris Holiday',
+    'Private Island Getaway',
+    'Express Flight Booking',
+    'Cyprus Family Vacation',
+    'Capri Coastal Escape',
+    'Apricot Orchard Tour',
+    'tours',
+    'flights',
+    'hotels',
+    'other',
+    'International Tour Packages'
+];
+
+foreach ($tourAmbiguousCases as $service) {
+    $isVisa = MailService::isVisaOrImmigrationEnquiry(['service_type' => $service]);
+    assertTest($isVisa === false, "Ambiguous tour service '{$service}' is NOT classified as visa (routes to sales@)");
+}
+
+$visaGenuineCases = [
+    'visa',
+    'study',
+    'canada_pr',
+    'cbi',
+    'rbi',
+    'Canada PR Consultation',
+    'Student Visa & Study Abroad',
+    'Permanent Residency Advisory',
+    'Citizenship by Investment',
+    'Residency by Investment',
+    'Express Entry Work Permit'
+];
+
+foreach ($visaGenuineCases as $service) {
+    $isVisa = MailService::isVisaOrImmigrationEnquiry(['service_type' => $service]);
+    assertTest($isVisa === true, "Genuine visa/mobility service '{$service}' is classified as visa (routes to visa@)");
+}
 
 // Test that general tour enquiry triggers routing to sales@
 $tourEnquiry = [
